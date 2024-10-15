@@ -1,0 +1,275 @@
+/* static/css/styles.css */
+
+/* Base styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #181818; /* Dark background */
+    color: #eee; /* Light text color */
+    line-height: 1.6;
+}
+
+.section {
+    padding: 2rem 1.5rem;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 1rem; /* Add padding to the container for better spacing */
+}
+
+/* Typography */
+.title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #eee; /* Light text color */
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center; /* Center the title */
+}
+
+.subtitle {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: #aaa; /* Slightly lighter gray text */
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+/* Box styles */
+.box {
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Darker box shadow */
+    background-color: #282c34; /* Dark gray background */
+    border: 1px solid #444; /* Subtle border */
+}
+
+/* Button styles */
+.button {
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    border: none; /* Remove default button border */
+}
+
+.button.is-link {
+    background-color: #00d1b2; /* Blue color for primary button */
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.button.is-link:hover {
+    background-color: #00a99d; /* Darker blue on hover */
+}
+
+.button.is-primary {
+    background-color: #28a745; /* Green color for secondary button */
+    color: #fff;
+}
+
+.button.is-primary:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+.button.is-danger {
+    background-color: #dc3545; /* Red color for danger button */
+    color: #fff;
+}
+
+.button.is-danger:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+.button.is-info {
+    background-color: #17a2b8; /* Blue color for info button */
+    color: #fff;
+}
+
+.button.is-info:hover {
+    background-color: #13849d; /* Darker blue on hover */
+}
+
+/* Specific button styles */
+.request-permission-button {
+    margin-top: 2rem;
+    display: block;
+    width: fit-content;
+}
+
+.home-button {
+    margin-top: 1rem;
+    display: block;
+    width: fit-content;
+    position: absolute; /* Positioning the button */
+    top: 10px; /* Distance from the top */
+    left: 10px; /* Distance from the left */
+}
+
+/* Audio player styles */
+.audio-player {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.audio-player button {
+    margin-right: 1rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #333; /* Darker gray background */
+    cursor: pointer;
+    color: #eee; /* Light text color */
+}
+
+.audio-player button:hover {
+    background-color: #444; /* Darker gray on hover */
+}
+
+/* Loader styles */
+.skeleton-loader {
+    display: none;
+    height: 4px;
+    background: linear-gradient(90deg, #444, #333, #444); /* Darker gradient */
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Highlight styles */
+.highlight {
+    background-color: #333; /* Darker gray highlight */
+}
+
+/* Hint styles */
+.hint {
+    display: none;
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #333; /* Darker gray background */
+    border-left: 4px solid #00d1b2; /* Blue border */
+    border-radius: 5px; /* Add rounded corners to the hint */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Darker box shadow */
+    color: #eee; /* Light text color */
+}
+
+/* Icon styles */
+.fas {
+    margin-left: 0.5rem; /* Add some spacing between text and icon */
+    font-size: 1.2rem;
+    color: #eee; /* Light text color */
+}
+
+/* Information styles */
+#question,
+#transcription,
+#score,
+#countdown,
+#review {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #eee; /* Light text color */
+}
+
+/* Filler word progress bars */
+#filler-word-progress-bars {
+    margin-top: 2rem;
+}
+
+#filler-word-progress-bars p {
+    margin-bottom: 0.5rem;
+    color: #eee; /* Light text color */
+}
+
+.progress {
+    height: 10px; /* Reduced height for a slimmer look */
+    border-radius: 10px; /* More rounded corners */
+    background-color: #444; /* Darker gray background */
+    margin-bottom: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+    overflow: hidden; /* Hide any overflow to ensure smooth progress */
+}
+
+.progress.is-danger {
+    background-color: #dc3545; /* Red color for danger progress bar */
+}
+
+/* Check mark styles */
+.check-mark {
+    display: none;
+    margin-left: 10px; /* Adjust the spacing between the button and the check mark */
+    vertical-align: middle; /* Align the check mark vertically with the button text */
+    color: #28a745; /* Green color for the check mark */
+    font-size: 1.5rem; /* Increase the size of the check mark */
+    opacity: 0; /* Start with the check mark hidden */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition for visibility and scale */
+    transform: scale(0.5); /* Start with a smaller scale */
+}
+
+#request-permission-button.granted {
+    display: none;
+}
+
+#check-mark.granted {
+    display: inline-block;
+    opacity: 1; /* Make the check mark visible */
+    transform: scale(1); /* Scale to normal size */
+}
+
+/* Form styles */
+form {
+    margin-bottom: 2rem;
+}
+
+.field {
+    margin-bottom: 1.5rem;
+}
+
+.label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #eee; /* Light text color */
+}
+
+.input {
+    padding: 0.8rem;
+    border: 1px solid #444; /* Subtle border */
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box; /* Include padding and border in width */
+    background-color: #333; /* Darker gray background */
+    color: #eee; /* Light text color */
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 0.5rem;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .audio-player button {
+        padding: 0.4rem 0.8rem;
+    }
+}

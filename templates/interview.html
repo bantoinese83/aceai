@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <h1 class="title">Interview for <span id="job_role" data-value="{{ job_role }}">{{ job_role }}</span> <i class="fas fa-briefcase"></i></h1>
+        <div class="box">
+            <p class="subtitle">Question: <span id="question" data-value="{{ question }}">{{ question }}</span> <i class="fas fa-question-circle"></i></p>
+            <p>Listen to the question:</p>
+            <div class="audio-player">
+                <button id="play-button"><i class="fas fa-play"></i></button>
+                <progress id="progress-bar" class="progress is-primary" value="0" max="100"></progress>
+                <audio id="audio" data-value="{{ audio_filename }}">
+                    <source src="{{ url_for('get_audio', filename=audio_filename) }}" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+            <div id="skeleton-loader" class="skeleton-loader"></div>
+            <div class="buttons">
+                <button class="button is-primary" onclick="startRecording()">
+                    <i class="fas fa-microphone"></i> Start Recording 🎤
+                </button>
+                <button class="button is-danger" onclick="stopRecording()">
+                    <i class="fas fa-stop"></i> Stop Recording 🛑
+                </button>
+            </div>
+            <p>Transcription: <span id="transcription"></span> <i class="fas fa-file-alt"></i></p>
+            <p id="score"></p>
+            <p>Time Remaining: <span id="countdown">1:00</span> ⏳</p>
+            <p>Review and Advice: <span id="review"></span> <i class="fas fa-comments"></i></p>
+            <div id="filler-word-progress-bars">
+                {% for word in ['uh', 'oh', 'um', 'like', 'you know', 'so', 'actually', 'basically', 'literally', 'I mean', 'well', 'sort of', 'kind of'] %}
+                    <p>{{ word }} Count: <span id="filler-word-count-{{ word }}">0</span> <i class="fas fa-exclamation-circle"></i></p>
+                    <progress id="filler-word-progress-{{ word }}" class="progress is-danger" value="0" max="10"></progress>
+                {% endfor %}
+            </div>
+            <button class="button is-info" onclick="revealHint()">Reveal Hint 🤔</button>
+            <div id="hint" class="hint">
+                <p>Perfect Answer: <span id="perfect-answer"></span> <i class="fas fa-check-circle"></i></p>
+            </div>
+        </div>
+        <!-- Hidden inputs to store candidate_name and company_name -->
+        <input type="hidden" id="candidate_name" value="{{ candidate_name }}">
+        <input type="hidden" id="company_name" value="{{ company_name }}">
+        <!-- Link to go to home page -->
+       <a href="{{ url_for('index') }}" class="button is-link home-button">Go to Home Page 🏠</a>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}
